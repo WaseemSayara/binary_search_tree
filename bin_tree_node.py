@@ -39,3 +39,47 @@ class BinTreeNode:
                 return None
             else:
                 return self.right.search_node(value)
+
+    def print_tree_node_prefix(self):
+
+        if self is None:
+            return
+        if self.left is not None:
+            self.left.print_tree_node_prefix()
+        print(self.value)
+        if self.right is not None:
+            self.right.print_tree_node_prefix()
+        return
+
+    def print_tree_node_postfix(self):
+
+        if self is None:
+            return
+        if self.right is not None:
+            self.right.print_tree_node_postfix()
+        print(self.value)
+        if self.left is not None:
+            self.left.print_tree_node_postfix()
+        return
+
+    def get_tree_node_prefix(self, arr):
+
+        if self is None:
+            return
+        if self.left is not None:
+            self.left.get_tree_node_prefix(arr)
+        arr.append(self.value)
+        if self.right is not None:
+            self.right.get_tree_node_prefix(arr)
+        return arr
+
+    def get_tree_node_postfix(self, arr):
+
+        if self is None:
+            return
+        if self.right is not None:
+            self.right.get_tree_node_postfix(arr)
+        arr.append(self.value)
+        if self.left is not None:
+            self.left.get_tree_node_postfix(arr)
+        return arr
