@@ -38,8 +38,8 @@ def test_search3():
 
 def test_prefix1(tree):
     new_arr = tree.get_tree_prefix()
-    for i in range(0, len(new_arr)-1):
-        assert new_arr[i] < new_arr[i+1]
+    for i in range(0, len(new_arr) - 1):
+        assert new_arr[i] < new_arr[i + 1]
 
 
 def test_prefix2():
@@ -50,11 +50,25 @@ def test_prefix2():
 
 def test_postfix1(tree):
     new_arr = tree.get_tree_postfix()
-    for i in range(0, len(new_arr)-1):
-        assert new_arr[i] > new_arr[i+1]
+    for i in range(0, len(new_arr) - 1):
+        assert new_arr[i] > new_arr[i + 1]
 
 
 def test_postfix2():
     new_tree = bin_tree.BinTree()
     new_arr = new_tree.get_tree_postfix()
     assert new_arr is None
+
+
+@pytest.mark.parametrize("input1,input2", [([1, 2, 3, 4, 5, 6], [3, 2, 1, 6, 4, 5])])
+def test_prefix(input1, input2):
+    new_tree = bin_tree.BinTree()
+    new_tree2 = bin_tree.BinTree()
+    for value in input1:
+        new_tree.insert(value)
+    for value in input2:
+        new_tree2.insert(value)
+    array1 = new_tree.get_tree_prefix()
+    array2 = new_tree2.get_tree_prefix()
+    for i in range(0, len(array1)):
+        assert array1[i] == array2[i]
