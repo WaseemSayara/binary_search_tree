@@ -112,7 +112,7 @@ def test_search_for_non_existing_real_number_in_non_empty_tree(tree):
 
 def test_search_for_existing_real_number_in_non_empty_tree(tree):
     assert tree.search(9.5) is not None
-    assert tree.search(9).value == 9
+    assert tree.search(9.5).value == 9
 
 
 def test_search_for_non_existing_integer_as_string_in_non_empty_tree(tree):
