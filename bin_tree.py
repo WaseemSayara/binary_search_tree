@@ -33,25 +33,25 @@ class BinTree:
     def print_tree_ascending(self):
         if self.root is None:
             print("the tree is empty")
-            return
+            return None
         else:
             print("the tree values in ascending are: ")
             self.root.print_tree_node_ascending()
-            return
+            return None
 
     def print_tree_descending(self):
         if self.root is None:
             print("the tree is empty")
-            return
+            return None
         else:
             print("the tree values in descending are: ")
             self.root.print_tree_node_descending()
-            return
+            return None
 
     def get_tree_ascending(self):
         if self.root is None:
             print("the tree is empty")
-            return
+            return None
         else:
             arr = []
             return self.root.get_tree_node_ascending(arr)
@@ -59,7 +59,7 @@ class BinTree:
     def get_tree_descending(self):
         if self.root is None:
             print("the tree is empty")
-            return
+            return None
         else:
             arr = []
             return self.root.get_tree_node_descending(arr)
